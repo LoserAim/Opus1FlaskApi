@@ -1,16 +1,18 @@
 from flask import Flask
 import os
+from flask_cors import CORS
 from src.config.config import Config
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_restful import Resource, Api, reqparse, marshal, abort, fields, marshal_with
+from flask_restful import Api
 
 # loading environment variables
 load_dotenv()
 
 # declaring flask application
 app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
 
 # calling the dev configuration
