@@ -14,7 +14,7 @@ def test_get_users():
         json_data = response.get_json()
         assert json_data == [{'email': 'bobsburgers@melissa.tv', 'id': 2, 'name': 'Bobby'}, {'email': 'Clarissa@melissa.tv', 'id': 3, 'name': 'Clarissa'}, {'email': 'darbus@melissa.tv', 'id': 4, 'name': 'Dave'}]
 
-@pytest.mark.parametrize("id", [1])
+@pytest.mark.parametrize("id", range(1, 21))
 def test_get_user_id(id):
     with app.test_client() as client:
         response = client.get(f'/api/users/{id}')
