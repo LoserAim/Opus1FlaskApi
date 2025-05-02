@@ -1,0 +1,29 @@
+
+### POST to API Users
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{"name": "Shaun","email": "shaun@sheep.tv"}
+
+###
+
+### GET to API Users
+GET http://localhost:5000/api/users
+
+
+###
+### GET to API User id 1
+GET http://localhost:5000/api/users/1
+###
+
+
+### GET to API User id 1
+PATCH http://localhost:5000/api/users/4
+Content-Type: application/json
+
+{"name": "Dave","email": "darbus@melissa.tv"}
+###
+### GET to API User id 1
+DELETE http://localhost:5000/api/users/4
+
+###
